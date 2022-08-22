@@ -63,7 +63,6 @@ export default function BlogDetails({ posts }) {
                         width={featuredImage.fields.file.details.image.width}
                         height={featuredImage.fields.file.details.image.height}
                     />
-                    {/* <h2>{title}</h2> */}
                 </div>
 
                 <div className="info">
