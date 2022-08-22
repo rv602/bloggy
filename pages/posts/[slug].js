@@ -46,7 +46,7 @@ export const getStaticProps = async ({ params }) => {
 
 }
 
-export default function RecipeDetails({ posts }) {
+export default function BlogDetails({ posts }) {
     console.log(posts);
     const { featuredImage, title, readingTime, topics, content } = posts.fields
 
