@@ -21,7 +21,7 @@ export default function PostCard({ post }) {
                     <p>{readingTime} min read</p>
                 </div>
                 <div className="actions">
-                    <Link href={`${slug}`}><a>Read this</a></Link>
+                    <Link href={`/posts/${slug}`}><a>Read this</a></Link>
                 </div>
             </div>
 
