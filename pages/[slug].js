@@ -77,7 +77,7 @@ export default function BlogDetails({ posts }) {
 
                 <div className="content">
                     <h3>Post</h3>
-                    {documentToReactComponents(content)}
+                    <div>{documentToReactComponents(content)}</div>
                 </div>
 
                 <style jsx>{`
