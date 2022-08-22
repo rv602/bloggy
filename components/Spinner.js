@@ -11,14 +11,6 @@ export default function Spinner() {
         height: '100vh',
         width: '100vw'
       }} />
-      {/* <style jsx>{`
-        .loader {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-      `}</style> */}
     </div>
   )
 }
