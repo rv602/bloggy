@@ -2,7 +2,7 @@ import { createClient } from 'contentful'
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { useState, useEffect } from 'react'
-import Spinner from '../../components/spinner'
+import Spinner from '../../components/Spinner'
 
 const client = createClient({
     space: process.env.CONTENTFUL_API_SPACE_ID,
