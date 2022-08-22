@@ -1,6 +1,8 @@
 import { createClient } from 'contentful'
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { useState, useEffect } from 'react'
+import Spinner from '../../components/spinner'
 
 const client = createClient({
     space: process.env.CONTENTFUL_API_SPACE_ID,
@@ -30,11 +32,11 @@ export const getStaticProps = async ({ params }) => {
         'fields.slug': params.slug
     })
 
-    if(!items.length) {
+    if (!items.length) {
         return {
-            redirect : {
-                destination : '/404',
-                permanent : false
+            redirect: {
+                destination: '/404',
+                permanent: false
             }
         }
     }
@@ -50,12 +52,22 @@ export default function BlogDetails({ posts }) {
     console.log(posts);
     const { featuredImage, title, readingTime, topics, content } = posts.fields
 
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 5000);
+    }, []);
+
     return (
         <>
             <header>
                 <title>{title}</title>
                 <h2 style={{ color: 'azure', fontWeight: 'bold' }}>{title}</h2>
             </header>
+            {loading ? (<Spinner />) : (null)}
             <div>
                 <div className="banner">
                     <Image

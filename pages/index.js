@@ -22,6 +22,7 @@ export async function getStaticProps() {
 
 export default function Recipes({ posts }) {
   console.log(posts);
+
   return (
     <>
       <header>
