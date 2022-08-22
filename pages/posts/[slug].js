@@ -58,75 +58,82 @@ export default function BlogDetails({ posts }) {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 5000);
+        }, 2200);
     }, []);
 
     return (
         <>
             <header>
                 <title>{title}</title>
-                <h2 style={{ color: 'azure', fontWeight: 'bold' }}>{title}</h2>
+                {/* <h2 style={{ color: 'azure', fontWeight: 'bold' }}>{title}</h2> */}
             </header>
-            {loading ? (<Spinner />) : (null)}
-            <div>
-                <div className="banner">
-                    <Image
-                        src={`https:` + featuredImage.fields.file.url}
-                        width={featuredImage.fields.file.details.image.width}
-                        height={featuredImage.fields.file.details.image.height}
-                    />
-                </div>
+            {loading ?
+                (<Spinner />)
+                :
+                (
+                    <>
+                        <h2 style={{ color: 'azure', fontWeight: 'bold', textAlign: 'center' }}>{title}</h2>
+                        <div>
+                            <div className="banner">
+                                <Image
+                                    src={`https:` + featuredImage.fields.file.url}
+                                    width={featuredImage.fields.file.details.image.width}
+                                    height={featuredImage.fields.file.details.image.height}
+                                />
+                            </div>
 
-                <div className="info">
-                    {/* <span>{readingTime} min read</span> */}
-                    <h3>Topics : </h3>
-                    <div className="topics">
-                        {topics.map(topic => (
-                            <p key={topic}>{topic}</p>
-                        ))}
-                    </div>
-                </div>
+                            <div className="info">
+                                {/* <span>{readingTime} min read</span> */}
+                                <h3>Topics : </h3>
+                                <div className="topics">
+                                    {topics.map(topic => (
+                                        <p key={topic}>{topic}</p>
+                                    ))}
+                                </div>
+                            </div>
 
-                <div className="content">
-                    <h3>Post</h3>
-                    <div>{documentToReactComponents(content)}</div>
-                </div>
+                            <div className="content">
+                                <h3>Post</h3>
+                                <div>{documentToReactComponents(content)}</div>
+                            </div>
 
-                <style jsx>{`
-            * {
-                color: #fff;
-            }
-            .topics {
-                display: flex;
-            }
-            h2,h3 {
-                text-transform: uppercase;
-            }
-            .banner h2 {
-                margin: 0;
-                background: #fff;
-                display: inline-block;
-                padding: 20px;
-                position: relative;
-                top: -60px;
-                left: -10px;
-                transform: rotateZ(-1deg);
-                box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-            }
-            p {
-                background: yellow;
-                color: #000;
-                border-radius: 10px;
-                padding: 10px;
-                margin-right: 10px;
-                margin-top: 0px;
-                cursor: pointer;
-            }
-            h2 {
-                text-align: center;
-            }
-        `}</style>
-            </div>
+                            <style jsx>{`
+                            * {
+                                color: #fff;
+                            }
+                            .topics {
+                                display: flex;
+                            }
+                            h2,h3 {
+                                text-transform: uppercase;
+                            }
+                            .banner h2 {
+                                margin: 0;
+                                background: #fff;
+                                display: inline-block;
+                                padding: 20px;
+                                position: relative;
+                                top: -60px;
+                                left: -10px;
+                                transform: rotateZ(-1deg);
+                                box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+                            }
+                            p {
+                                background: yellow;
+                                color: #000;
+                                border-radius: 10px;
+                                padding: 10px;
+                                margin-right: 10px;
+                                margin-top: 0px;
+                                cursor: pointer;
+                            }
+                            h2 {
+                                text-align: center;
+                            }
+                        `}</style>
+                        </div>
+                    </>
+                )}
         </>
     )
 }
