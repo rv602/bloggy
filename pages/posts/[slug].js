@@ -78,7 +78,8 @@ export default function BlogDetails({ posts }) {
                 <div className="content">
                     <h3>Post</h3>
                     {/* <div>{documentToReactComponents(content)}</div> */}
-                    <div>{content ? documentToReactComponents(content) : <p>no content brother</p>}</div>
+                    {/* <div>{content ? documentToReactComponents(content) : <p>no content brother</p>}</div> */}
+                    {content ? documentToReactComponents(content) : <p>no content brother</p>}
                 </div>
 
                 <style jsx>{`
