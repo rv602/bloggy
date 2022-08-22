@@ -10,7 +10,7 @@ export default function index() {
         setTimeout(() => {
             router.push('/');
         }, 4000)
-    }, [])
+    })
 
     return (
         <div>
