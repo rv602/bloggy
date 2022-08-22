@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 
@@ -29,6 +29,15 @@ export const getStaticProps = async ({ params }) => {
         content_type: 'post',
         'fields.slug': params.slug
     })
+
+    if(!items.length) {
+        return {
+            redirect : {
+                destination : '/404',
+                permanent : false
+            }
+        }
+    }
 
     return {
         props: { posts: items[0] },
@@ -44,6 +53,7 @@ export default function RecipeDetails({ posts }) {
     return (
         <>
             <header>
+                <title>{title}</title>
                 <h2 style={{ color: 'azure', fontWeight: 'bold' }}>{title}</h2>
             </header>
             <div>

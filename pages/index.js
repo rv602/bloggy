@@ -25,6 +25,7 @@ export default function Recipes({ posts }) {
   return (
     <>
       <header>
+        <title>RV's blog</title>
         <Link href="/">
           <h2>RV's blog</h2>
         </Link>
@@ -46,6 +47,9 @@ export default function Recipes({ posts }) {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 20px 60px;
+        }
+        .blog-list : hover {
+          transform: scale(1.5);
         }
       `}</style>
       </div>
