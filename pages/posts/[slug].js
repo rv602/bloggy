@@ -78,7 +78,8 @@ export default function RecipeDetails({ posts }) {
 
                 <div className="content">
                     <h3>Post</h3>
-                    <div>{documentToReactComponents(content)}</div>
+                    {/* <div>{documentToReactComponents(content)}</div> */}
+                    <div>{documentToReactComponents(posts.fields.content)}</div>
                 </div>
 
                 <style jsx>{`
