@@ -49,7 +49,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function BlogDetails({ posts }) {
-    console.log(posts);
+    // console.log(posts);
     const { featuredImage, title, readingTime, topics, content } = posts.fields
 
     const [loading, setLoading] = useState(true)
