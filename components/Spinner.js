@@ -3,14 +3,22 @@ import { HashLoader } from "react-spinners";
 
 export default function Spinner() {
   return (
-    <div className='loader'>
-      <HashLoader color='#fff' size={100} loading={true} cssOverride={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        width: '100vw'
-      }} />
-    </div>
+    <>
+      <div className='loader'>
+        <HashLoader color='#fff' size={100} loading={true} cssOverride={{}} />
+        <style jsx>{`
+          .loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform: -webkit-translate(-50%, -50%);
+            transform: -moz-translate(-50%, -50%);
+            transform: -ms-translate(-50%, -50%);
+            color:darkred;
+          }
+        `}</style>
+      </div>
+    </>
   )
 }
