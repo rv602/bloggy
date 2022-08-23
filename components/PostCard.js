@@ -42,7 +42,7 @@ export default function PostCard({ post }) {
                   }
                   .info h4 {
                     margin: 4px 0;
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
                   }
                   .info p {
                     margin: 0;

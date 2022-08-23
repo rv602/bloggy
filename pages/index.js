@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
 }
 
-export default function Recipes({ posts }) {
+export default function Posts({ posts }) {
   // console.log(posts);
 
   return (
@@ -46,11 +46,8 @@ export default function Recipes({ posts }) {
         <style jsx>{`
         .blog-list {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr; 
           grid-gap: 20px 60px;
-        }
-        .blog-list : hover {
-          transform: scale(1.5);
         }
       `}</style>
       </div>
