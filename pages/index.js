@@ -46,7 +46,7 @@ export default function Posts({ posts }) {
         <style jsx>{`
         .blog-list {
           display: grid;
-          grid-template-columns: 1fr 1fr; 
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           grid-gap: 20px 60px;
         }
       `}</style>
